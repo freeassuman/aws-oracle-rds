@@ -10,12 +10,18 @@ variable "allowed_cidr_blocks" {
 variable "engine_edition" { type = string }
 variable "engine_version" { type = string }
 variable "instance_class" { type = string }
-variable "multi_az" { type = bool default = false }
+variable "multi_az" {
+  type    = bool
+  default = false
+}
 
 variable "username" { type = string }
 variable "password" { type = string sensitive = true }
 
-variable "db_port" { type = number default = 1521 }
+variable "db_port" {
+  type    = number
+  default = 1522
+}
 
 variable "db_parameters" {
   description = "Custom parameters for the DB parameter group"
