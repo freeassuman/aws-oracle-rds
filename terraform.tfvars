@@ -1,11 +1,11 @@
 name_prefix         = "dev-oracle"
-vpc_id              = "vpc-123456"
-private_subnet_ids  = ["subnet-aaa", "subnet-bbb", "subnet-ccc"]
+vpc_id              = "vpc-05b913bf1c50ea96a"
+private_subnet_ids  = ["subnet-07d3ad86490a1bfd7", "subnet-0450d12c181b95e70"]
 allowed_cidr_blocks = ["10.0.0.0/16"]
 
 engine_edition = "oracle-se2"
 engine_version = "19"
-instance_class = "db.m6i.large"
+instance_class = "db.r6i.large"
 multi_az       = false
 
 username = "admin"
