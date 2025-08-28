@@ -15,8 +15,14 @@ variable "multi_az" {
   default = false
 }
 
-variable "username" { type = string }
-variable "password" { type = string sensitive = true }
+variable "username" {
+  type = string
+}
+variable "password" {
+  type      = string
+  sensitive = true
+}
+
 
 variable "db_port" {
   type    = number
