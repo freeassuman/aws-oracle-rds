@@ -1,15 +1,32 @@
-variable "name_prefix" { type = string }
-variable "vpc_id" { type = string }
-variable "private_subnet_ids" { type = list(string) }
+variable "name_prefix" {
+  type = string
+}
+
+variable "vpc_id" {
+  type = string
+}
+
+variable "private_subnet_ids" {
+  type = list(string)
+}
+
 variable "allowed_cidr_blocks" {
   type    = list(string)
   default = []
 }
 
+variable "engine_edition" {
+  type = string
+}
 
-variable "engine_edition" { type = string }
-variable "engine_version" { type = string }
-variable "instance_class" { type = string }
+variable "engine_version" {
+  type = string
+}
+
+variable "instance_class" {
+  type = string
+}
+
 variable "multi_az" {
   type    = bool
   default = false
@@ -18,11 +35,11 @@ variable "multi_az" {
 variable "username" {
   type = string
 }
+
 variable "password" {
   type      = string
   sensitive = true
 }
-
 
 variable "db_port" {
   type    = number
@@ -31,7 +48,7 @@ variable "db_port" {
 
 variable "db_parameters" {
   description = "Custom parameters for the DB parameter group"
-  type        = list(object({
+  type = list(object({
     name  = string
     value = string
   }))
@@ -47,7 +64,7 @@ variable "db_options" {
     persistent                     = optional(bool)
     permanent                      = optional(bool)
     vpc_security_group_memberships = optional(list(string))
-    option_settings                = optional(list(object({
+    option_settings = optional(list(object({
       name  = string
       value = string
     })))
