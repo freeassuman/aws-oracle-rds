@@ -1,5 +1,5 @@
 module "rds_oracle" {
-  source              = "../modules"
+  source              = "../../modules/orcle-rds"
 
   name_prefix         = var.name_prefix
   vpc_id              = var.vpc_id
