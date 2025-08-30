@@ -10,7 +10,7 @@ multi_az       = false
 
 username = "admin"
 password = "SuperSecretPass123!"
-db_port  = 1522  # Secure port
+db_port  = 1522
 
 # Parameter group
 db_parameters = [
