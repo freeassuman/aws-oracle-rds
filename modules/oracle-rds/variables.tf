@@ -55,6 +55,13 @@ variable "db_parameters" {
   default = []
 }
 
+variable "aws_region" {
+  description = "AWS region to deploy resources in"
+  type        = string
+  default     = "eu-west-1"
+}
+
+
 variable "db_options" {
   description = "Custom options for the DB option group"
   type = list(object({
