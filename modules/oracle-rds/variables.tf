@@ -61,7 +61,6 @@ variable "aws_region" {
   default     = "eu-west-1"
 }
 
-
 variable "db_options" {
   description = "Custom options for the DB option group"
   type = list(object({
