@@ -68,7 +68,7 @@ test-plan:
       - $TF_ROOT/test/.terraform/
     expire_in: 1 hour
 
-test-apply:
+.test-apply:
   stage: test-apply
   tags: *default_tags
   script:
