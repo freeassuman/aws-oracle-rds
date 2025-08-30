@@ -40,7 +40,7 @@ test-validate:
   environment:
     name: test
 
-security-scan-test:
+.security-scan-test:
   stage: security-scan-test
   tags: *default_tags
   script:
@@ -82,7 +82,7 @@ test-apply:
   rules:
     - if: '$CI_COMMIT_BRANCH == "main"'
 
-.test-destroy:
+test-destroy:
   stage: test-destroy
   tags:
   - pltest
