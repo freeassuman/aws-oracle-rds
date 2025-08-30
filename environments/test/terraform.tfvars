@@ -1,6 +1,6 @@
 name_prefix         = "dev-oracle"
-vpc_id              = "vpc-05b913bf1c50ea96a"
-private_subnet_ids  = ["subnet-07d3ad86490a1bfd7", "subnet-0450d12c181b95e70"]
+vpc_id              = "vpc-027857c7c38740a74"
+private_subnet_ids  = ["subnet-0920379bf86d5f976", "subnet-0db2e3e8339da2d96"]
 allowed_cidr_blocks = ["10.0.0.0/16"]
 
 engine_edition = "oracle-se2"
