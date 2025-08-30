@@ -1,4 +1,4 @@
-name_prefix         = "dev-oracle"
+name_prefix         = "test-oracle"
 vpc_id              = "vpc-027857c7c38740a74"
 private_subnet_ids  = ["subnet-0920379bf86d5f976", "subnet-0db2e3e8339da2d96"]
 allowed_cidr_blocks = ["10.0.0.0/16"]
