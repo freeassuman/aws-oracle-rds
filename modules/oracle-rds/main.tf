@@ -47,12 +47,6 @@ resource "aws_db_option_group" "this" {
   major_engine_version     = var.engine_version
   option_group_description = "Custom Oracle RDS option group"
 
-resource "aws_db_option_group" "this" {
-  name                     = "${var.name_prefix}-option-group"
-  engine_name              = "oracle-se2"
-  major_engine_version     = var.engine_version
-  option_group_description = "Custom Oracle RDS option group"
-
   dynamic "option" {
     for_each = var.db_options
     content {
@@ -70,7 +64,6 @@ resource "aws_db_option_group" "this" {
       }
     }
   }
-}
 }
 
 # DB Instance
