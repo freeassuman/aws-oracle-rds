@@ -45,7 +45,7 @@ resource "aws_db_parameter_group" "this" {
 # Option Group
 resource "aws_db_option_group" "this" {
   name                     = "${var.name_prefix}-option-group"
-  engine_name              = "oracle-se2"
+  engine_name              = "oracle-ee"    # <- must match DB engine
   major_engine_version     = var.engine_version
   option_group_description = "Custom Oracle RDS option group"
 
@@ -67,6 +67,7 @@ resource "aws_db_option_group" "this" {
     }
   }
 }
+
 
 # DB Instance
 resource "aws_db_instance" "this" {
