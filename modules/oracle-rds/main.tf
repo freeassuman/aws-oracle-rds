@@ -47,6 +47,12 @@ resource "aws_db_option_group" "this" {
   major_engine_version     = var.engine_version
   option_group_description = "Custom Oracle RDS option group"
 
+resource "aws_db_option_group" "this" {
+  name                     = "${var.name_prefix}-option-group"
+  engine_name              = "oracle-se2"
+  major_engine_version     = var.engine_version
+  option_group_description = "Custom Oracle RDS option group"
+
   dynamic "option" {
     for_each = var.db_options
     content {
@@ -56,7 +62,7 @@ resource "aws_db_option_group" "this" {
       vpc_security_group_memberships = lookup(option.value, "vpc_security_group_memberships", null)
 
       dynamic "option_settings" {
-        for_each = lookup(option.value, "option_settings", [])
+        for_each = coalesce(option.value.option_settings, [])
         content {
           name  = option_settings.value.name
           value = option_settings.value.value
@@ -64,6 +70,7 @@ resource "aws_db_option_group" "this" {
       }
     }
   }
+}
 }
 
 # DB Instance
