@@ -84,7 +84,7 @@ resource "aws_db_instance" "this" {
   vpc_security_group_ids  = [aws_security_group.this.id]
   parameter_group_name    = aws_db_parameter_group.this.name
   option_group_name       = aws_db_option_group.this.name
-  license_model           = "BRING_YOUR_OWN_LICENSE"
+  license_model           = "bring-your-own-license"
   skip_final_snapshot     = true
 }
 
