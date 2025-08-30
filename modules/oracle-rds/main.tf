@@ -28,17 +28,19 @@ resource "aws_security_group" "this" {
 # Parameter Group
 resource "aws_db_parameter_group" "this" {
   name        = "${var.name_prefix}-param-group"
-  family      = "oracle-se2-${var.engine_version}"
+  family      = "oracle-ee-${var.engine_version}"
   description = "Custom Oracle RDS parameter group"
 
   dynamic "parameter" {
     for_each = var.db_parameters
     content {
-      name  = parameter.value.name
-      value = parameter.value.value
+      name         = parameter.value.name
+      value        = parameter.value.value
+      apply_method = lookup(parameter.value, "apply_method", "pending-reboot")  # default to pending-reboot
     }
   }
 }
+
 
 # Option Group
 resource "aws_db_option_group" "this" {

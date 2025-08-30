@@ -24,6 +24,7 @@ db_parameters = [
   { name = "resource_limit", value = "TRUE", apply_method = "pending-reboot" }
 ]
 
+
 # Option group (remove unsupported persistent/permanent, keep only valid options)
 db_options = [
   # TDE may not be valid in this region; verify before applying
