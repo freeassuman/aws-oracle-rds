@@ -73,7 +73,7 @@ resource "aws_db_instance" "this" {
   identifier              = "${var.name_prefix}-rds"
   allocated_storage       = 20
   max_allocated_storage   = 100
-  engine                  = "oracle-se2"
+  engine                  = "oracle-ee"   # Enterprise Edition
   engine_version          = var.engine_version
   instance_class          = var.instance_class
   username                = var.username
@@ -84,5 +84,7 @@ resource "aws_db_instance" "this" {
   vpc_security_group_ids  = [aws_security_group.this.id]
   parameter_group_name    = aws_db_parameter_group.this.name
   option_group_name       = aws_db_option_group.this.name
+  license_model           = "BRING_YOUR_OWN_LICENSE"
   skip_final_snapshot     = true
 }
+
