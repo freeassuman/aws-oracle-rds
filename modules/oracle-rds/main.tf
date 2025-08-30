@@ -53,8 +53,7 @@ resource "aws_db_option_group" "this" {
       option_name = option.value.option_name
       port        = lookup(option.value, "port", null)
       version     = lookup(option.value, "version", null)
-      persistent  = lookup(option.value, "persistent", null)
-      permanent   = lookup(option.value, "permanent", null)
+      vpc_security_group_memberships = lookup(option.value, "vpc_security_group_memberships", null)
 
       dynamic "option_settings" {
         for_each = lookup(option.value, "option_settings", [])
