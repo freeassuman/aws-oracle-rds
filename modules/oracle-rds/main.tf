@@ -87,5 +87,7 @@ resource "aws_db_instance" "this" {
   option_group_name       = aws_db_option_group.this.name
   license_model           = "bring-your-own-license"
   skip_final_snapshot     = true
+  lifecycle {
+    prevent_destroy = true
+  }
 }
-
