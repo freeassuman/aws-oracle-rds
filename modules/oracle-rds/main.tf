@@ -88,6 +88,6 @@ resource "aws_db_instance" "this" {
   license_model           = "bring-your-own-license"
   skip_final_snapshot     = true
   lifecycle {
-    prevent_destroy = true
+    prevent_destroy = false
   }
 }
